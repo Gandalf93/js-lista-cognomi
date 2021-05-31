@@ -21,6 +21,36 @@ if (listaAutorizzati.includes(email)) {
 // 3. stampa la lista ordinata alfabeticamente
 // 4. scrivi anche la posizione "umana" (partendo da 1) della lista in cui il nuovo utente si trova
 
+var cognome = prompt('inserisci il tuo cognome');
+
+var listaCognomi = ['Bianchi', 'Neri', 'Rossi', 'Verdi', 'Gialli'];
+
+listaCognomi.push(cognome);
+
+listaCognomi.sort();
+
+for (var i = 0; i < listaCognomi.length; i++){
+    console.log(listaCognomi[i]);
+}
+
+for (var i = 0; i < listaCognomi.length; i++ ){
+    if (cognome == listaCognomi[i]){
+        break
+    }
+}
+
+i += 1
+console.log('Cognome utente-' + i);
+// non ho capito benissimo questo!
+
+// Bonus: (da fare solo dopo aver concluso tutto) Trovate un modo per trasformare in maiuscolo la prima lettera del cognome inserito dall'utente e tutto il resto in minuscolo.
+
+
+
+
+
+
+
 
 
 
