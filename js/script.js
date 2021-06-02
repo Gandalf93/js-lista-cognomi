@@ -8,12 +8,21 @@ var email = prompt('inserisci la tua mail');
 
 var listaAutorizzati = ['giacobberossi65@gmail.com', 'albertomari@tiscali.it', 'giovanna81@alice.it', 'claudiodeclaudi@gmail.com','mariomariamario@gmail.com'];
 
+i = 0;
+var found = 'false';
 
-if (listaAutorizzati.includes(email)) {
-    alert('Your email adress is valid, Welcome!');
+while (i < listaAutorizzati.length){
+    if(email == listaAutorizzati[i]){
+        found = true;
+    }
+    i++
+}
+
+if ( found == true){
+    document.getElementById("yes").innerHTML = 'Benvenuto';
 } else {
-    alert('Sorry, it seems you are not on the list. Please check again your email adress.');
-};
+    document.getElementById("no").innerHTML = 'Spiacente, sembra che tu non abbia l\'autorizzazione';
+}
 
 // Lista Cognomi:
 // 1. chiedi all’utente il cognome
@@ -22,27 +31,27 @@ if (listaAutorizzati.includes(email)) {
 // 4. scrivi anche la posizione "umana" (partendo da 1) della lista in cui il nuovo utente si trova
 // Bonus: (da fare solo dopo aver concluso tutto) Trovate un modo per trasformare in maiuscolo la prima lettera del cognome inserito dall'utente e tutto il resto in minuscolo.
 
-var cognome = prompt('inserisci il tuo cognome');
-var cognomeCap = cognome.charAt(0).toUpperCase() + cognome.slice(1);
+ var cognome = prompt('inserisci il tuo cognome');
+ var cognomeCap = cognome.charAt(0).toUpperCase() + cognome.slice(1);
 
-var listaCognomi = ['Bianchi', 'Neri', 'Rossi', 'Verdi', 'Gialli'];
+ var listaCognomi = ['Bianchi', 'Neri', 'Rossi', 'Verdi', 'Gialli'];
 
-listaCognomi.push(cognomeCap);
+ listaCognomi.push(cognomeCap);
 
-listaCognomi.sort();
+ listaCognomi.sort();
 
-for (var i = 0; i < listaCognomi.length; i++){
-    console.log(listaCognomi[i]);
-}
+ for (var i = 0; i < listaCognomi.length; i++){
+     console.log(listaCognomi[i]);
+ }
 
-for (var i = 0; i < listaCognomi.length; i++ ){
-    if (cognomeCap == listaCognomi[i]){
-        break
-    }
-}
+ for (var i = 0; i < listaCognomi.length; i++ ){
+     if (cognomeCap == listaCognomi[i]){
+         break
+     }
+ }
 
-i += 1
-console.log('Cognome utente-' + i);
+ i += 1
+ console.log('Cognome utente-' + i);
 
 
 
